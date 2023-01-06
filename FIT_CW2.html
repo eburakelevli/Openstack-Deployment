@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Encryption Decryption App</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+      </head>
+<body>
+ 
+<input type="text" value="Text to Encrypt" id="encrypt">
+<input type="text" value="Text to Encrypt" id="decrypt">
+
+<br>
+ 
+<input type="submit" class="btn btn-primary" id="btn" name="Encrypt" onclick=" clickbtncall()">
+
+<input type="submit"  id="btn" name="Decrypt" onclick=" clickbtncall()">
+
+<br>
+
+<h2 id="heading1"></h2>
+
+
+</body>
+</html>
+
+ 
+
+
+<script type="text/javascript">
+
+function clickbtncall(){
+
+ 
+
+var first = $("#first").val();
+
+
+
+urlval = "http://127.0.0.1:5000/encrypt?text=I am testing my app";
+
+$.ajax({url: urlval, success: function(result){
+    $("#heading1").append(result);
+  
+  }});
+
+
+
+var out = "myoutput";
+
+// $("#heading1").append(out);
+
+console.log(first);
+}
+
+ 
+
+
+</script>
